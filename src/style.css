@@ -27,3 +27,16 @@
 #input-group-text {
   background-color: rgb(131, 131, 139);
 }
+#fillin {
+  display: flex;
+  justify-content: left;
+  align-self: center;
+  border: 1px solid red;
+  border-radius: 0.25rem;
+  background-color: pink;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+#alert {
+  margin: 0.1rem;
+}

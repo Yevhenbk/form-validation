@@ -25,7 +25,6 @@ window.onload = function() {
   CVCVALIDATION();
   AMOUNTVALIDATION();
   CITYVALIDATION();
-
   /*checkcvc();
   checkname();
   checklastname();
