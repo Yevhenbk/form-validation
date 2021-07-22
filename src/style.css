@@ -1,1 +1,29 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.row {
+  padding-bottom: 1rem;
+}
+.bottom-buttons {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: rgba(0, 0, 0, 0.03);
+  padding-top: 1rem;
+  text-align: right;
+}
+.input-group-prepend {
+  width: 16.5rem;
+  color: rgb(109, 109, 109);
+  background-color: white;
+}
+#input-group-text {
+  color: white;
+}
+#container {
+  margin-top: 5rem;
+}
+#container-fluid {
+  width: 60em;
+}
+#input-group-text {
+  background-color: rgb(131, 131, 139);
+}
