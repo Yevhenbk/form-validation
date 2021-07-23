@@ -13,7 +13,7 @@ const AMOUNT = document.querySelector("#cc-amount");
 const CITY = document.querySelector("#inputCity");
 const STATE = document.querySelector("#inputState");
 const ZIP = document.querySelector("#inputZip");
-const CARDS = document.querySelector("#input-group-prepend");
+//const CARDS = document.querySelector("#input-group-prepend");
 const SEND = document.querySelector("#Send");
 window.onload = function() {
   SEND.addEventListener("click", function(event) {
@@ -25,58 +25,10 @@ window.onload = function() {
   CVCVALIDATION();
   AMOUNTVALIDATION();
   CITYVALIDATION();
-  /*checkcvc();
-  checkname();
-  checklastname();
-  checkcard();
-  checkamount();
-  checkstate();
-  checkcity();
-  checkzip();
-  isValidCreditCard();*/
+  ZIPVALIDATION();
+  STATEVALIDATION();
 };
 
-/*const checkcvc = () => {
-  CVC.addEventListener("focusout", function(event) {
-    console.log("submit");
-    event.target.style.background = "pink";
-  });
-};
-const checkname = () => {
-  NAME.addEventListener("focusout", function(event) {
-    event.target.style.background = "pink";
-  });
-};
-const checklastname = () => {
-  SURNAME.addEventListener("focusout", function(event) {
-    event.target.style.background = "pink";
-  });
-};
-const checkcard = () => {
-  CARD.addEventListener("focusout", function(event) {
-    event.target.style.background = "pink";
-  });
-};
-const checkamount = () => {
-  AMOUNT.addEventListener("focusout", function(event) {
-    event.target.style.background = "pink";
-  });
-};
-const checkstate = () => {
-  STATE.addEventListener("focusout", function(event) {
-    event.target.style.background = "pink";
-  });
-};
-const checkcity = () => {
-  CITY.addEventListener("focusout", function(event) {
-    event.target.style.background = "pink";
-  });
-};
-const checkzip = () => {
-  ZIP.addEventListener("focusout", function(event) {
-    event.target.style.background = "pink";
-  });
-};*/
 const CHECKNUMBERS = myNumber => {
   return Number(myNumber) % 1 == 0;
 };
@@ -96,9 +48,8 @@ const INVALIDINPUT = event => {
 const CARDVALIDATION = () => {
   CARD.addEventListener("focusout", event => {
     CHECKNUMBERS(CARD.value) &&
-    CARD.value.length >= 10 &&
-    CARD.value.length <= 15 &&
-    CARDVALIDATION(CARD.value)
+    CARD.value.length >= 15 &&
+    CARD.value.length <= 19
       ? VALIDINPUT(CARD)
       : INVALIDINPUT(CARD);
   });
@@ -133,4 +84,15 @@ const LASTNAMEVALIDATION = () => {
 const CITYVALIDATION = () => {};
 CITY.addEventListener("focusout", event => {
   CHECKSTRING(CITY.value) ? VALIDINPUT(CITY) : INVALIDINPUT(CITY);
+});
+const ZIPVALIDATION = () => {
+  ZIP.addEventListener("focusout", event => {
+    CHECKNUMBERS(ZIP.value) && ZIP.value.length == 5
+      ? VALIDINPUT(ZIP)
+      : INVALIDINPUT(ZIP);
+  });
+};
+const STATEVALIDATION = () => {};
+STATE.addEventListener("focusout", event => {
+  CHECKSTRING(STATE.value) ? VALIDINPUT(STATE) : INVALIDINPUT(STATE);
 });

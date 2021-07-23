@@ -1,5 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
-
+body {
+  font-family: "Poppins", sans-serif;
+}
 .row {
   padding-bottom: 1rem;
 }
